@@ -1,0 +1,23 @@
+void leftRotate(long arr[], int k,int length)
+    {
+       k%=length;
+       rotate(arr,0,length-1);
+       rotate(arr,0,length-k-1);
+       rotate(arr,length-k,length-1);
+    //   for(int i=0;i<=length-1;i++){
+    //       System.out.print(arr[i]+" ");
+    //   }
+        
+        
+        
+    }
+    static void rotate(long[] arr,int start,int end){
+        while(start<end){
+            long temp= arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+            
+        }
+    }
