@@ -1,0 +1,19 @@
+long maxSubarraySum(int arr[], int n){
+        
+
+        
+        
+        int currentsum=arr[0];
+        int overalsum=arr[0];
+        for(int i=1;i<n;i++){
+            if(currentsum>=0){
+                currentsum+=arr[i];
+            }else{
+                currentsum=arr[i];
+            }
+            if(currentsum>overalsum){
+                overalsum=currentsum;
+            }
+        }
+        return overalsum;
+    }
