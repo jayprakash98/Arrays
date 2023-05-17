@@ -1,0 +1,37 @@
+Geek and Geekina are running on a running track. They love
+
+meeting each other. Geek can complete a lap in A seconds and
+
+Geekina can complete a lap in B seconds. Both start running at
+
+the same time and both can run atmost for C seconds. Find the
+
+number of times they can meet on the starting point after they
+
+have started running.
+
+
+
+
+
+
+
+
+class Solution {
+    public long meetThem(long A, long B, long C) {
+        long lcm = lcm(A, B);
+        return C / lcm;
+    }
+
+    // Helper function to calculate the least common multiple (LCM)
+    private long lcm(long a, long b) {
+        return (a * b) / gcd(a, b);
+    }
+
+    // Helper function to calculate the greatest common divisor (GCD)
+    private long gcd(long a, long b) {
+        if (b == 0)
+            return a;
+        return gcd(b, a % b);
+    }
+}
